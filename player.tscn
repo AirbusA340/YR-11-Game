@@ -282,17 +282,17 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ltx6"]
-radius = 6.0
-height = 18.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2crw7"]
+radius = 5.5
+height = 14.0
 
 [node name="Player" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cohh7")
-animation = &"Run"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
-shape = SubResource("CapsuleShape2D_5ltx6")
+shape = SubResource("CapsuleShape2D_2crw7")
