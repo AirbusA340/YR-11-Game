@@ -292,7 +292,7 @@ height = 14.0
 sprite_frames = SubResource("SpriteFrames_cohh7")
 animation = &"Idle"
 autoplay = "Idle"
+offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_2crw7")

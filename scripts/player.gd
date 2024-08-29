@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 var speed: float = 300
 var accel: float = 100
-var y_speed: float = 5000
-var y_accel: float = 5000
+var y_speed: float = 10000
+var y_accel: float = 10000
 const SPEED = 300.0
 const JUMP_VELOCITY = -200.0
 
