@@ -12,40 +12,36 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_elkt3")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(575, 325)
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = -104.0
-offset_right = -2.0
-offset_bottom = -2.0
+offset_top = -11.0
+offset_bottom = 91.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 0.92)
 texture = ExtResource("2_to3ay")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 2
-offset_left = 389.0
-offset_top = 100.0
-offset_right = 478.0
-offset_bottom = 146.0
-scale = Vector2(1.88546, 1.23415)
+offset_left = 473.0
+offset_top = 195.0
+offset_right = 573.0
+offset_bottom = 261.0
+scale = Vector2(1.64546, 1.15415)
 text = "Timing Tomfoolery
 "
 fit_content = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 330.0
-offset_top = 178.0
-offset_right = 419.0
-offset_bottom = 364.0
-scale = Vector2(3.57251, 2.20507)
+offset_left = 472.0
+offset_top = 257.0
+offset_right = 561.0
+offset_bottom = 443.0
+scale = Vector2(1.70308, 1.35148)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2

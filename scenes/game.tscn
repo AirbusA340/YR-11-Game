@@ -403,12 +403,15 @@ sources/0 = SubResource("TileSetAtlasSource_5xopa")
 
 [node name="Game" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.145, 3.145)
-
 [node name="Player" parent="." instance=ExtResource("1_qrjs4")]
 position = Vector2(-10, 19)
 script = ExtResource("2_hwa0s")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(10, -19)
+zoom = Vector2(3.145, 3.145)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(11, -6)
