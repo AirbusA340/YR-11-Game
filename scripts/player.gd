@@ -13,12 +13,10 @@ const JUMP_VELOCITY = -200.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(_delta):
-	
+	if not is_on_floor():
+			velocity.y += gravity * _delta
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		if not is_on_floor():
-			velocity.y += gravity * _delta
-			
 	
 	var direction: Vector2 = Input.get_vector("move_left", "move_right", "flip_up", "flip_down")
 

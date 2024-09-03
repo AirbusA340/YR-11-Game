@@ -12,16 +12,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_elkt3")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 324)
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -11.0
-offset_bottom = 91.0
+offset_left = -964.0
+offset_top = -511.0
+offset_right = -214.0
+offset_bottom = 239.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1, 0.92)
+scale = Vector2(2.59642, 1.46058)
 texture = ExtResource("2_to3ay")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
