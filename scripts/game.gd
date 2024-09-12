@@ -1,9 +1,11 @@
 extends Node2D
 
-@onready var timer = $Timer
+@onready var timer = $Spikes/Timer
 
 func _on_area_2d_body_entered(body):
-	if body.name == "Player":
+
+	if body.has_method("die"):
+		body.die()
 		Engine.time_scale = 0.5
 		timer.start()
 		

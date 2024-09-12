@@ -1,6 +1,10 @@
-[gd_scene load_steps=40 format=3 uid="uid://cuse7e272lep4"]
+[gd_scene load_steps=41 format=3 uid="uid://cuse7e272lep4"]
 
 [ext_resource type="Texture2D" uid="uid://b3rdh2jxb4xee" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="1_vshhl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wu67"]
+atlas = ExtResource("1_vshhl")
+region = Rect2(64, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_427fy"]
 atlas = ExtResource("1_vshhl")
@@ -18,6 +22,10 @@ region = Rect2(64, 224, 32, 32)
 atlas = ExtResource("1_vshhl")
 region = Rect2(96, 224, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnjut"]
+atlas = ExtResource("1_vshhl")
+region = Rect2(64, 192, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wppw"]
 atlas = ExtResource("1_vshhl")
 region = Rect2(0, 192, 32, 32)
@@ -25,10 +33,6 @@ region = Rect2(0, 192, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3b4h7"]
 atlas = ExtResource("1_vshhl")
 region = Rect2(32, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fnjut"]
-atlas = ExtResource("1_vshhl")
-region = Rect2(64, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1qtl"]
 atlas = ExtResource("1_vshhl")
@@ -150,6 +154,9 @@ region = Rect2(224, 96, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_1wu67")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_427fy")
 }, {
 "duration": 1.0,
@@ -161,19 +168,19 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tbvgv")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fnjut")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4wppw")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3b4h7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fnjut")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k1qtl")
@@ -290,7 +297,7 @@ height = 14.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cohh7")
-animation = &"Idle"
+animation = &"Death"
 autoplay = "Idle"
 offset = Vector2(0, -4)
 

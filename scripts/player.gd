@@ -12,6 +12,9 @@ const JUMP_VELOCITY = -200.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func die():
+	animated_sprite.play("Death")
+	
 func _physics_process(_delta):
 	if not is_on_floor():
 			velocity.y += gravity * _delta
@@ -44,6 +47,7 @@ func _physics_process(_delta):
 	if direction_x:
 		velocity.x = direction_x * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)	
-	
+		velocity.x = move_toward(velocity.x, 0, SPEED)		
 	move_and_slide()
+
+
