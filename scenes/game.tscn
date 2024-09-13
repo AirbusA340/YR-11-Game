@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dogju2rowi865"]
+[gd_scene load_steps=28 format=3 uid="uid://dogju2rowi865"]
 
 [ext_resource type="Texture2D" uid="uid://d0b8pr7g7hsrd" path="res://assets/Glacial-mountains-parallax-background_vnitti/Layers/sky_lightened.png" id="1_p540u"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_qqwa7"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bfqd7x0pqsf4w" path="res://assets/Sidescroller Shooter - Central City/Sidescroller Shooter - Central City/Assets/Buildings.png" id="12_rmfby"]
 [ext_resource type="Texture2D" uid="uid://bb37aj3uaywak" path="res://assets/adve/adve/tiles.png" id="13_wajlp"]
 [ext_resource type="Texture2D" uid="uid://dih1nwiqbbtsn" path="res://assets/16-bit-spike-Sheet.png" id="15_kgr3o"]
+[ext_resource type="Script" path="res://scripts/Control.gd" id="16_ofqdm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xopa"]
 texture = ExtResource("3_o4pqg")
@@ -1427,263 +1428,514 @@ region_rect = Rect2(0, 0, 16, 16)
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Spikes2" type="StaticBody2D" parent="."]
-position = Vector2(195, 2)
+[node name="Spikes2" type="StaticBody2D" parent="Spikes"]
+position = Vector2(-32, 48)
 
-[node name="Timer" type="Timer" parent="Spikes2"]
+[node name="Timer" type="Timer" parent="Spikes/Spikes2"]
 wait_time = 0.5
 one_shot = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes2"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_0bcl1")
 
-[node name="Sprite2D" type="Sprite2D" parent="Spikes2"]
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes2"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes2/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes2/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Spikes2"]
-position = Vector2(16, 0)
+[node name="Spikes3" type="StaticBody2D" parent="Spikes"]
+position = Vector2(80, 64)
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes3"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes3"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes3"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D2"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes3/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes3/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Spikes2"]
-position = Vector2(-400, 16)
+[node name="Spikes4" type="StaticBody2D" parent="Spikes"]
+position = Vector2(112, -16)
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes4"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes4"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes4"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D3"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes4/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes4/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Spikes2"]
-position = Vector2(-304, 16)
+[node name="Spikes5" type="StaticBody2D" parent="Spikes"]
+position = Vector2(128, -16)
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes5"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes5"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes5"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D4"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes5/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D4/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes5/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Spikes2"]
-position = Vector2(-416, -79)
+[node name="Spikes6" type="StaticBody2D" parent="Spikes"]
+position = Vector2(-288, 0)
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes6"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes6"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes6"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D5"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes6/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D5/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes6/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D6" type="Sprite2D" parent="Spikes2"]
-position = Vector2(-144, 64)
+[node name="Spikes7" type="StaticBody2D" parent="Spikes"]
+position = Vector2(-192, 0)
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes7"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes7"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes7"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D6"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes7/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D6/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes7/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D7" type="Sprite2D" parent="Spikes2"]
-position = Vector2(-32, 80)
+[node name="Spikes8" type="StaticBody2D" parent="Spikes"]
+position = Vector2(-304, -96)
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes8"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes8"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes8"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D7"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes8/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D7/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes8/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D8" type="Sprite2D" parent="Spikes2"]
-position = Vector2(0, 112)
-rotation = -3.14518
+[node name="Spikes9" type="StaticBody2D" parent="Spikes"]
+position = Vector2(-144, -80)
+rotation = -3.14096
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes9"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes9"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes9"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D8"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes9/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D8/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes9/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D9" type="Sprite2D" parent="Spikes2"]
-position = Vector2(-256, 48)
-rotation = -3.14518
+[node name="Spikes10" type="StaticBody2D" parent="Spikes"]
+position = Vector2(48, -80)
+rotation = -3.14096
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes10"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes10"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes10"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D9"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes10/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D9/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes10/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D10" type="Sprite2D" parent="Spikes2"]
-position = Vector2(-256, -64)
-rotation = -3.14518
+[node name="Spikes11" type="StaticBody2D" parent="Spikes"]
+position = Vector2(112, -80)
+rotation = -3.14096
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes11"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes11"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes11"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D10"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes11/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D10/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes11/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D11" type="Sprite2D" parent="Spikes2"]
-position = Vector2(-64, -64)
-rotation = -3.14518
+[node name="Spikes12" type="StaticBody2D" parent="Spikes"]
+position = Vector2(-144, 32)
+rotation = -3.14096
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes12"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes12"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes12"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D11"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes12/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D11/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes12/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D12" type="Sprite2D" parent="Spikes2"]
-position = Vector2(0, -64)
-rotation = -3.14518
+[node name="Spikes13" type="StaticBody2D" parent="Spikes"]
+position = Vector2(112, 96)
+rotation = -3.14096
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes13"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes13"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes13"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D12"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes13/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D12/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes13/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D13" type="Sprite2D" parent="Spikes2"]
-position = Vector2(64, -64)
-rotation = -4.71516
+[node name="Spikes14" type="StaticBody2D" parent="Spikes"]
+position = Vector2(176, 1.90735e-06)
+rotation = 1.57951
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes14"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes14"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes14"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D13"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes14/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D13/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes14/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D14" type="Sprite2D" parent="Spikes2"]
-position = Vector2(64, -48)
-rotation = -4.71516
+[node name="Spikes15" type="StaticBody2D" parent="Spikes"]
+position = Vector2(176, -16)
+rotation = 1.57951
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes15"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes15"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes15"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D14"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes15/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D14/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes15/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D15" type="Sprite2D" parent="Spikes2"]
-position = Vector2(64, -32)
-rotation = -4.71516
+[node name="Spikes16" type="StaticBody2D" parent="Spikes"]
+position = Vector2(176, -32)
+rotation = 1.57951
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes16"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes16"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes16"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D15"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes16/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D15/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes16/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D16" type="Sprite2D" parent="Spikes2"]
-position = Vector2(64, -16)
-rotation = -4.71516
+[node name="Spikes17" type="StaticBody2D" parent="Spikes"]
+position = Vector2(176, -48)
+rotation = 1.57951
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes17"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes17"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes17"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D16"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes17/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D16/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes17/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D17" type="Sprite2D" parent="Spikes2"]
-position = Vector2(64, 0)
-rotation = -4.71516
+[node name="Spikes18" type="StaticBody2D" parent="Spikes"]
+position = Vector2(176, -64)
+rotation = 1.57951
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes18"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes18"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes18"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D17"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes18/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D17/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes18/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
 
-[node name="Sprite2D18" type="Sprite2D" parent="Spikes2"]
-position = Vector2(64, 16)
-rotation = -4.71516
+[node name="Spikes19" type="StaticBody2D" parent="Spikes"]
+position = Vector2(176, -80)
+rotation = 1.57951
+
+[node name="Timer" type="Timer" parent="Spikes/Spikes19"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes19"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0bcl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes/Spikes19"]
 texture = ExtResource("15_kgr3o")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="Spikes2/Sprite2D18"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes19/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2/Sprite2D18/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes19/Sprite2D/Area2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_rwiy1")
+
+[node name="Control" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("16_ofqdm")
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Button2" type="Button" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Button3" type="Button" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
 
 [connection signal="timeout" from="Spikes/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Spikes/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Spikes/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Spikes/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Spikes2/Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Spikes2/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D2/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D3/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D4/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D5/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D6/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D7/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D8/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D9/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D10/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D11/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D12/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D13/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D14/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D15/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D16/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D17/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Spikes2/Sprite2D18/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes2/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes2/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes2/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes2/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes3/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes3/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes3/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes3/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes4/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes4/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes4/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes4/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes5/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes5/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes5/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes5/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes6/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes6/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes6/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes6/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes7/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes7/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes7/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes7/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes8/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes8/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes8/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes8/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes9/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes9/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes9/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes9/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes10/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes10/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes10/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes10/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes11/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes11/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes11/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes11/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes12/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes12/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes12/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes12/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes13/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes13/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes13/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes13/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes14/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes14/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes14/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes14/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes15/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes15/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes15/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes15/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes16/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes16/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes16/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes16/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes17/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes17/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes17/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes17/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes18/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes18/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes18/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes18/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spikes/Spikes19/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spikes/Spikes19/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes19/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes19/Sprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]

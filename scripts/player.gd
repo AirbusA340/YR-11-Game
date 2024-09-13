@@ -50,4 +50,7 @@ func _physics_process(_delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)		
 	move_and_slide()
 
-
+func _on_area_2d_body_entered(body):
+		if body.name == "Area2D":
+			animated_sprite.play("Death")
+			body.get_node("CollisionShape2D").queue_free()
