@@ -1,13 +1,15 @@
-extends Node2D
+extends Area2D
 
-@onready var timer = $Spikes/Timer
+@onready var timer =$Timer
 
-func _on_area_2d_body_entered(_body):
+func _on_body_entered(_body):
 	if _body.has_method("die"):
 		_body.die()
 		Engine.time_scale = 0.5
 		timer.start()
-		
+ 
+
 func _on_timer_timeout():
-	Engine.time_scale = 1.0
+	Engine.time_scale = 1
 	get_tree().reload_current_scene()
+	

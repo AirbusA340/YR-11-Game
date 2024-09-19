@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxk3yle8r2cx8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0ew3n"]
+
+[node name="Killzone" type="Area2D"]
+collision_mask = 2
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(206, 307)
+shape = SubResource("WorldBoundaryShape2D_0ew3n")
