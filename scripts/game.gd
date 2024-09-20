@@ -3,7 +3,7 @@ extends Node2D
 @onready var timer = $Spikes/Timer
 
 func _on_area_2d_body_entered(_body):
-	if _body.has_method("die"):
+	if _body.is_in_group("player"):
 		_body.die()
 		Engine.time_scale = 0.5
 		timer.start()

@@ -47,5 +47,11 @@ func _physics_process(_delta):
 	if direction_x:
 		velocity.x = direction_x * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)		
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
 	move_and_slide()
+
+
+func _on_killzone_body_entered(body):
+	if body.is_in_group("killzone"):
+		animated_sprite.play("Death")
