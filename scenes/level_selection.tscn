@@ -80,4 +80,5 @@ text = "Go Back"
 
 [connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Go Back button" to="." method="_on_go_back_button_pressed"]

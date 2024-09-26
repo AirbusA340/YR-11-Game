@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://7a5ccyec5dip"]
+[gd_scene load_steps=6 format=3 uid="uid://7a5ccyec5dip"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_elkt3"]
-[ext_resource type="Texture2D" uid="uid://cogrvdoix1ufx" path="res://assets/2956_3024_6228.jpg" id="2_to3ay"]
+[ext_resource type="Texture2D" uid="uid://7s7hnrjydrri" path="res://assets/free-city-backgrounds-pixel-art/city 4/8.png" id="2_j4jo2"]
+[ext_resource type="Texture2D" uid="uid://dleqrlplx4kd5" path="res://assets/Glacial-mountains-parallax-background_vnitti/background_glacial_mountains.png" id="3_gapmd"]
+[ext_resource type="Texture2D" uid="uid://dqne4lx7k1vo2" path="res://assets/Free Pixel Art Forest/Free Pixel Art Forest/Preview/Background.png" id="4_npdpw"]
+[ext_resource type="Texture2D" uid="uid://d1veor87s8m0" path="res://assets/Player.PNG" id="5_va7x3"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -16,25 +19,45 @@ script = ExtResource("1_elkt3")
 position = Vector2(575, 324)
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -964.0
-offset_top = -511.0
-offset_right = -214.0
-offset_bottom = 239.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2.59642, 1.46058)
-texture = ExtResource("2_to3ay")
+offset_left = 185.0
+offset_top = -186.0
+offset_right = 761.0
+offset_bottom = 138.0
+rotation = -0.418211
+scale = Vector2(0.526938, 0.526938)
+texture = ExtResource("2_j4jo2")
+
+[node name="TextureRect2" type="TextureRect" parent="Camera2D"]
+offset_left = -497.0
+offset_top = -215.0
+offset_right = 79.0
+offset_bottom = 109.0
+rotation = 0.250891
+scale = Vector2(0.526938, 0.526938)
+texture = ExtResource("3_gapmd")
+
+[node name="TextureRect3" type="TextureRect" parent="Camera2D"]
+offset_left = 95.0
+offset_top = 78.0
+offset_right = 1023.0
+offset_bottom = 871.0
+rotation = -0.0769187
+scale = Vector2(0.268148, 0.268148)
+texture = ExtResource("4_npdpw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+position = Vector2(-158, 170)
+rotation = -0.288835
+scale = Vector2(0.161245, 0.161245)
+texture = ExtResource("5_va7x3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 2
-offset_left = 473.0
-offset_top = 195.0
-offset_right = 573.0
-offset_bottom = 261.0
-scale = Vector2(1.64546, 1.15415)
+offset_left = 441.0
+offset_top = 209.0
+offset_right = 651.0
+offset_bottom = 275.0
+scale = Vector2(1.58603, 1.29127)
 text = "Timing Tomfoolery
 "
 fit_content = true
