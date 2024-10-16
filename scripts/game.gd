@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var timer = $Spikes/Timer
+@onready var timer = $Spikes/Timer 
 
 func _on_area_2d_body_entered(_body):
 	if _body.is_in_group("player"):
